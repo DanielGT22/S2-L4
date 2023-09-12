@@ -2,9 +2,10 @@
  Scrivi una funzione di nome "area", che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato..
 */
 function area(l1, l2) {
-  return l1 + l2;
+  return l1 * l2;
 }
-console.log(area);
+
+console.log(area());
 
 /* ESERCIZIO 2
  Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
@@ -14,7 +15,7 @@ console.log(area);
 
 function crazySum(n1, n2) {
   if (n1 === n2) {
-    return n1 * n2;
+    return (n1 + n2) * 3;
   } else {
     return n1 + n2;
   }
@@ -36,7 +37,8 @@ function crazyDiff(n1, n2 = 19) {
 console.log(crazyDiff(20));
 /* ESERCIZIO 4
 
- Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
+ Scrivi una funzione di nome "boundary" che accetta un numero intero n 
+ come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
  se n è uguale a 400.
 */
 
@@ -64,6 +66,15 @@ function epify(miaStringa) {
 }
 console.log(epify());
 */
+const epify = function (miaStringa) {
+  if (miaStringa.startsWith("EPICODE")) {
+    return miaStringa;
+  } else {
+    return "EPICODE " + miaStringa;
+  }
+};
+console.log(epify("salve"));
+console.log(epify("Hello"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come
@@ -121,11 +132,15 @@ function cutString(parola1) {
 }
 console.log(cutString("salve"));
 /* ESERCIZIO 10
- Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
+ Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un
+  numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-/*non funziona :(
+
 function giveMeRandom(n1) {
-  return Math.floor(Math.random() * 11);
+  const arr = [];
+  for (let i = 0; i < n1; i++) {
+    arr.push(Math.floor(Math.random() * 11));
+    return arr;
+  }
 }
-console.log(giveMeRandom);
-*/
+console.log(giveMeRandom(1));
